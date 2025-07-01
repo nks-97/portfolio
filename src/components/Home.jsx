@@ -1,17 +1,17 @@
-export default function Home() {
+export default function Home({isScrolled}) {
     return (
-        <div className="w-full h-screen flex items-center px-6 md:px-60 relative">
-            <div className="max-w-lg text-white">
-                <h2 className="text-3xl sm:text-4xl font-normal md:text-5xl lg:text-6xl leading-tight">Hi,</h2>
-                <h1 className="text-5xl sm:text-6xl font-semibold md:text-7xl lg:text-8xl leading-tight">
+        <div className="w-full h-screen relative">
+            <div className="text-white absolute top-1/2 -translate-y-1/2 left-[15%]">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-normal">Hi,</h2>
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight font-semibold">
                     I'm Niko
                 </h1>
-                <p className="text-lg sm:text-xl mt-4 font-thin">
+               <p className="text-base sm:text-md md:text-lg lg:text-xl tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.3em] lg:tracking-[0.5em] font-thin mt-0">
                     IT Specialist / Web Developer
                 </p>
             </div>
 
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+            <div className={`absolute bottom-6 left-1/2 -translate-x-1/2 text-white ${isScrolled ? "opacity-0" : "opacity-100 "} transition-opacity duration-500 ease-in-out`}>
                 scroll
             </div>
         </div>
