@@ -8,3 +8,24 @@
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
 }
+
+
+
+
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+
+@layer utilities {
+  .fading-animation {
+    animation: fade 3s ease-in-out infinite;
+  }
+}

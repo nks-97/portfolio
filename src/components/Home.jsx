@@ -1,4 +1,11 @@
+import { useEffect } from "react";
+
 export default function Home({isScrolled}) {
+    useEffect(()=>{
+        setInterval(()=>{
+
+        }, 1000)
+    } ,[])
     return (
         <div className="w-full h-screen relative">
             <div className="text-white absolute top-1/2 -translate-y-1/2 left-[15%]">
@@ -11,7 +18,7 @@ export default function Home({isScrolled}) {
                 </p>
             </div>
 
-            <div className={`absolute bottom-6 left-1/2 -translate-x-1/2 text-white ${isScrolled ? "opacity-0" : "opacity-100 "} transition-opacity duration-500 ease-in-out`}>
+            <div className={`absolute bottom-6 left-1/2 -translate-x-1/2 text-white ${isScrolled ? "opacity-0" : "opacity-100 fading-animation"} transition-opacity duration-500 ease-in-out`}>
                 scroll
             </div>
         </div>
