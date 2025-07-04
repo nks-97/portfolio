@@ -2,10 +2,10 @@ import './App.css'
 import { useState, useEffect } from "react"
 import Home from './components/Home'
 import NavBar from './components/NavBar'
+import About from './components/About'
 function App() {
 
       const [isScrolled, setIsScrolled] = useState(false)
-    
     useEffect(()=>{
         function handleScroll(){
 
@@ -19,10 +19,11 @@ function App() {
 
   return (
     <>
-      <div className="bg-ellipse-center w-full h-[300vh]">
+      <div className="background-color w-full h-[300vh] transition-all duration-1000 ease-in-out">
       <NavBar isScrolled = {isScrolled}></NavBar>
       <Home isScrolled = {isScrolled}></Home>
-      
+      <About></About>
+
      </div>
     </>
   )

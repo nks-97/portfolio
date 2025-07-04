@@ -2,16 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 *{
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
+  user-select: none;
 }
-
-
-
-
 
 @keyframes fade {
   0%, 100% {
@@ -28,4 +23,27 @@
   .fading-animation {
     animation: fade 3s ease-in-out infinite;
   }
+}
+
+@layer base{
+  :root{
+    --text-primary: #fff;
+    --text-secondary: #ffffff;
+    --background: radial-gradient(circle at top right, #D65A31 0%, #D65A31 10%, #202020 60%);
+  }
+
+  .dark{
+    --text-primary: #000;
+    --text-secondary: #D65A31;
+    --background:  radial-gradient(circle at top right, #adadad 0%, #adadad 10%, #fbfbfb 60%);
+  }
+}
+
+@layer utilities{
+  .background-color{
+    background-image:var(--background);
+    transition: background-image 0.5s ease;
+  }
+
+  
 }
