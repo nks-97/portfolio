@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logoWhite from "../assets/NKSW.png";
 import logoBlack from "../assets/NKS.png";
 import { Moon, SunMedium } from "lucide-react";
@@ -6,16 +6,43 @@ export default function NavBar({ isScrolled }) {
   const [isDark, setIsDark] = useState(true);
   const [hamburgerClick, setHamburgerClick] = useState(false);
 
-  function handleToggleDark (){
-    setIsDark((prev)=>!prev);
-          document.documentElement.classList.toggle("dark");
+  function handleToggleDark() {
+    setIsDark((prev) => {
+      const themeSelected = !prev;
+      localStorage.setItem("theme", themeSelected ? "dark" : "light");
+      return themeSelected;
+    });
+    document.documentElement.classList.toggle("dark");
   }
+
+  useEffect(() => {
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme == "dark") {
+      document.documentElement.classList.remove("dark");
+      setIsDark(true);
+    } else if (currentTheme == "light") {
+      document.documentElement.classList.add("dark");
+      setIsDark(false);
+    }
+  }, []);
+
+  const navList = [
+    {key: 'Home', name: 'Home' , link:'home'},
+    {key: 'About', name: 'About' , link:'about'},
+    {key: 'Skills', name: 'Skills' , link:'skills'},
+    {key: 'Project', name: 'Project' , link:'project'},
+    {key: 'Contact', name: 'Contact' , link:'contact'},
+  ];
 
   return (
     <div>
       <div
         className={`fixed w-full z-40 transition-colors duration-500 ease [transition-delay:0.3s] ${
-          isScrolled ? isDark ? "bg-black/40 backdrop-blur-md" : "backdrop-blur-md" : undefined
+          isScrolled
+            ? isDark
+              ? "bg-black/40 backdrop-blur-md"
+              : "backdrop-blur-md"
+            : undefined
         }`}
       >
         <div
@@ -27,10 +54,11 @@ export default function NavBar({ isScrolled }) {
             <img className="w-12" src={isDark ? logoWhite : logoBlack} alt="" />
           </div>
           <div className="hidden md:flex flex-row gap-10 text-primary">
-            <span>Home</span>
-            <span>About</span>
-            <span>Project</span>
-            <span>Contact</span>
+            {navList.map(({ name, link, key }) => (
+              <a key={key} href={`#${link}`}>
+                {name}
+              </a>
+            ))}
           </div>
           <div
             className="text-white md:hidden"
@@ -42,9 +70,9 @@ export default function NavBar({ isScrolled }) {
 
         <div className="absolute top-1/2 -translate-y-1/2 right-10">
           {isDark ? (
-            <SunMedium size={24} color="white" onClick={handleToggleDark} />
+            <SunMedium size={24} className="text-orange-100" onClick={handleToggleDark} />
           ) : (
-            <Moon size={24} color="black" onClick={handleToggleDark}/>
+            <Moon size={24} className="text-blue-900" onClick={handleToggleDark} />
           )}
         </div>
       </div>

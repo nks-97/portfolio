@@ -7,7 +7,7 @@ export default function Home({isScrolled}) {
         }, 1000)
     } ,[])
     return (
-        <div className="w-full h-screen relative">
+        <div className="w-full h-screen relative" id="home">
             <div className=" absolute top-1/2 -translate-y-1/2 left-[15%]">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-normal text-primary">Hi,</h2>
                 <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight font-semibold text-primary 

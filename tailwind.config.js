@@ -14,6 +14,7 @@ export default {
       colors: {
         primary: 'var(--text-primary)',
         secondary: 'var(--text-secondary)',
+        cardcolor: 'var(--card-color)',
       },
     },
   },

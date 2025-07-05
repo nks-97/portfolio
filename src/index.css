@@ -2,21 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  user-select: none;
-}
-
 @keyframes fade {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
 }
-
 
 
 @layer utilities {
@@ -25,25 +21,43 @@
   }
 }
 
-@layer base{
-  :root{
+@layer base {
+  :root {
     --text-primary: #fff;
     --text-secondary: #ffffff;
     --background: radial-gradient(circle at top right, #D65A31 0%, #D65A31 10%, #202020 60%);
+    --card-color: #C8C8C8;
   }
 
-  .dark{
+  .dark {
     --text-primary: #000;
     --text-secondary: #D65A31;
-    --background:  radial-gradient(circle at top right, #adadad 0%, #adadad 10%, #fbfbfb 60%);
+    --background: radial-gradient(circle at top right, #adadad 0%, #adadad 10%, #fbfbfb 60%);
+    --card-color: #828282;
+  }
+
+  * {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    user-select: none;
+  }
+
+  html {
+    @apply scroll-smooth
   }
 }
 
-@layer utilities{
-  .background-color{
-    background-image:var(--background);
+@layer utilities {
+  .background-color {
+    background-image: var(--background);
     transition: background-image 0.5s ease;
   }
 
-  
+  .card-box{
+    @apply rounded-md p-4
+  }
+
+  .card-hover{
+    @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg
+  }
 }
