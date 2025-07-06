@@ -1,7 +1,9 @@
+import { CodeXml } from "lucide-react";
+
 export default function About(){
   return (
     <div
-      className="w-full h-screen flex flex-col items-center justify-center text-secondary  px-10 md:px-64"
+      className="w-full flex flex-col items-center justify-center text-secondary md:px-64 min-h-screen px-4 py-16"
       id="about"
     >
       <h1 className="text-primary pb-20 text-4xl">
@@ -23,10 +25,22 @@ export default function About(){
             incidunt est enim?
           </p>
         </div>
-        <div className="flex flex-col justify-evenly">
-          <div className="card-box border border-cardcolor text-secondary card-hover"></div>
-          <div className="card-box border border-cardcolor text-secondary card-hover"></div>
-          <div className="card-box border border-cardcolor text-secondary card-hover"></div>
+        <div className="flex flex-col justify-evenly gap-4">
+          <div className="card-box border border-cardcolor text-secondary card-hover">
+            <div className="bg-transparent border border-primary h-14 w-14 rounded-full flex justify-center items-center ">
+              <CodeXml className=""/>
+            </div>
+          </div>
+          <div className="card-box border border-cardcolor text-secondary card-hover">
+            <div className="bg-transparent border border-primary h-14 w-14 rounded-full flex justify-center items-center ">
+              <CodeXml className=""/>
+            </div>
+          </div>
+          <div className="card-box border border-cardcolor text-secondary card-hover">
+            <div className="bg-transparent border border-primary h-14 w-14 rounded-full flex justify-center items-center ">
+              <CodeXml className=""/>
+            </div>
+          </div>
         </div>
       </div>
     </div>

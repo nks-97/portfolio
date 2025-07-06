@@ -4,6 +4,7 @@ import Home from './components/Home'
 import NavBar from './components/NavBar'
 import About from './components/About'
 import Skills from './components/Skills'
+import Projects from './components/Projects'
 function App() {
 
       const [isScrolled, setIsScrolled] = useState(false)
@@ -20,11 +21,12 @@ function App() {
 
   return (
     <>
-      <div className="background-color w-full h-[300vh] transition-all duration-1000 ease-in-out">
+      <div className="background-color min-h-screen w-full transition-all duration-1000 ease-in-out">
       <NavBar isScrolled = {isScrolled}></NavBar>
       <Home isScrolled = {isScrolled}>  </Home>
       <About></About>
       <Skills></Skills>
+      <Projects></Projects>
 
      </div>
     </>

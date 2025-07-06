@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import logoWhite from "../assets/NKSW.png";
 import logoBlack from "../assets/NKS.png";
-import { Moon, SunMedium } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 export default function NavBar({ isScrolled }) {
   const [isDark, setIsDark] = useState(true);
   const [hamburgerClick, setHamburgerClick] = useState(false);
@@ -18,10 +18,10 @@ export default function NavBar({ isScrolled }) {
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
     if (currentTheme == "dark") {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("dark");
       setIsDark(true);
     } else if (currentTheme == "light") {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("dark");
       setIsDark(false);
     }
   }, []);
@@ -70,7 +70,7 @@ export default function NavBar({ isScrolled }) {
 
         <div className="absolute top-1/2 -translate-y-1/2 right-10">
           {isDark ? (
-            <SunMedium size={24} className="text-orange-100" onClick={handleToggleDark} />
+            <Sun size={24} className="text-orange-100" onClick={handleToggleDark} />
           ) : (
             <Moon size={24} className="text-blue-900" onClick={handleToggleDark} />
           )}

@@ -44,7 +44,7 @@ const skillCategories = [
 
 const filteredSkills = skills.filter((skill)=> activeCategory === 'all' || skill.category === activeCategory);
   return (
-    <div id="skills" className="flex flex-col items-center w-full h-screen px-10 md:px-64">
+    <div id="skills" className="flex flex-col items-center w-full md:px-64 min-h-screen px-4 py-16">
       <h1 className="py-20 text-primary text-4xl">
         My <span className="text-secondary">Skills</span>
       </h1>
