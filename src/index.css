@@ -32,12 +32,8 @@
   radial-gradient(circle at top right, rgba(157, 157, 157, 0.25) 0%, transparent 40%),
   radial-gradient(circle at 30% 60%, rgba(157, 157, 157, 0.25) 0%, transparent 50%),
   linear-gradient(to bottom right, #f4f1ee, #cfcfcf);
-
-
-
-
-
-    --card-color: #828282;
+  --card-color: #828282;
+  --card-bg: #f5f5f5;
   }
 
   .dark {
@@ -45,6 +41,7 @@
     --text-secondary: #ffffff;
     --background: radial-gradient(circle at top right, #D65A31 0%, #D65A31 10%, #202020 60%);
     --card-color: #C8C8C8;
+    --card-bg: #3b3a3a;
   }
 
   * {
