@@ -33,9 +33,9 @@ export default function About() {
           {[1, 2, 3].map((_, idx) => (
             <div
               key={idx}
-              className="card-box border border-cardcolor text-secondary card-hover p-4 rounded-lg flex items-center gap-4"
+              className="group card-box border border-cardcolor text-secondary card-hover p-4 rounded-lg flex items-center gap-4"
             >
-              <div className="bg-transparent border border-primary h-14 w-14 rounded-full flex justify-center items-center">
+              <div className="bg-transparent border border-primary h-14 w-14 rounded-full flex justify-center items-center group-hover:jump-in">
                 <CodeXml className="w-6 h-6 text-primary" />
               </div>
               <p className="text-sm">Some detail or label</p>

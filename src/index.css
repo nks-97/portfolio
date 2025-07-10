@@ -17,7 +17,13 @@
 
 @layer utilities {
   .fading-animation {
-    animation: fade 3s ease-in-out infinite;
+    animation: fade 3s ease-in-out 10s infinite;
+  }
+}
+
+@layer utilities {
+  .button-custom {
+   @apply bg-primary text-gray-100 py-3 px-5 rounded-xl my-4
   }
 }
 
@@ -25,21 +31,18 @@
   :root {
     --text-primary: #000;
     --text-secondary: #D65A31;
-    /* --background: 
-    radial-gradient(circle at top right, #adadad 0%, #adadad 10%, #fbfbfb 60%),
-    radial-gradient(circle at bottom left, #ad0202 0%, #adadad 10%, #fbfbfb 60%); */
---background: 
-  radial-gradient(circle at top right, rgba(157, 157, 157, 0.25) 0%, transparent 40%),
-  radial-gradient(circle at 30% 60%, rgba(157, 157, 157, 0.25) 0%, transparent 50%),
-  linear-gradient(to bottom right, #f4f1ee, #cfcfcf);
-  --card-color: #828282;
-  --card-bg: #f5f5f5;
+    --background:
+      radial-gradient(circle at top right, rgba(157, 157, 157, 0.25) 0%, transparent 40%),
+      radial-gradient(circle at 30% 60%, rgba(157, 157, 157, 0.25) 0%, transparent 50%),
+      linear-gradient(to bottom right, #f4f1ee, #cfcfcf);
+    --card-color: #828282;
+    --card-bg: #f5f5f5;
   }
 
   .dark {
     --text-primary: #fff;
     --text-secondary: #ffffff;
-    --background: radial-gradient(circle at top right, #D65A31 0%, #D65A31 10%, #202020 60%);
+    --background: radial-gradient(circle at top right, #D65A31 0%, #D65A31 10%, #202020 40%);
     --card-color: #C8C8C8;
     --card-bg: #3b3a3a;
   }
@@ -61,11 +64,50 @@
     transition: background-image 0.5s ease;
   }
 
-  .card-box{
+  .card-box {
     @apply rounded-md p-4
   }
 
-  .card-hover{
+  .card-hover {
     @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg
+  }
+
+
+}
+
+
+@keyframes fade-up {
+
+  0%
+ {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes jump-in {
+
+  0%, 100%
+ {
+    transform: translateY(5);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
+@layer utilities {
+  .fade-up {
+    animation: fade-up 1s ease forwards;
+  }
+  .jump-in {
+    animation: jump-in 2s ease-in-out infinite;
   }
 }
